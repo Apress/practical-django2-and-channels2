@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+    <script
+      src="{% static "js/reconnecting-eventsource.js" %}"
+      charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Customer chats</h1>
+    <div id="notification-area"></div>
+    <script>
+      var source = new ReconnectingEventSource('/customer-service/notify/');
+      source.addEventListener('message', function (e) {
+        document
+          .getElementById("notification-area")
+          .innerHTML = "";
+        var data = JSON.parse(e.data);
+        var html;
+        for (var i = 0; i < data.length; i++) {
+          html = '<div><a href="' + data[i]['link'] + '">' + data[i]['text'] +
+              '</a></div>';
+          document
+            .getElementById("notification-area")
+            .innerHTML += html;
+        }
+      }, false);
+    </script>
+  </body>
+</html>

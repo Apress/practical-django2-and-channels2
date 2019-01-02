@@ -1,0 +1,15 @@
+{% extends "admin/change_form.html" %}
+{% block object-tools-items %}
+  {% url 'admin:invoice' original.pk as invoice_url %}
+  {% if invoice_url %}
+    <li>
+      <a href="{{ invoice_url }}">View Invoice</a>
+    </li>
+    <li>
+      <a href="{{ invoice_url }}?format=pdf">
+        Download Invoice as PDF
+      </a>
+    </li>
+  {% endif %}
+  {{ block.super }}
+{% endblock %}

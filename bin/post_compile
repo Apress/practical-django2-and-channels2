@@ -1,0 +1,7 @@
+#!/bin/bash
+export PATH=/app/.heroku/node/bin:$PATH
+npm run build-prod
+./manage.py collectstatic --noinput
+./manage.py migrate --noinput
+npm test -- frontend
+./manage.py test --noinput --exclude-tag=e2e

@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with orders specified 1`] = `
+<View
+  style={
+    Object {
+      "borderColor": "orange",
+      "borderWidth": 1,
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    Chat for order: 
+    1
+  </Text>
+  <RCTScrollView
+    onContentSizeChange={[Function]}
+    showsVerticalScrollIndicator={true}
+    style={
+      Object {
+        "borderColor": "purple",
+        "borderWidth": 1,
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "lightgrey",
+            "flex": 1,
+            "flexDirection": "row",
+            "margin": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+           
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "flex": 1,
+              "textAlign": "right",
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+  <TextInput
+    allowFontScaling={true}
+    onSubmitEditing={[Function]}
+    placeholder="Enter a message..."
+    returnKeyType="send"
+    style={
+      Object {
+        "borderWidth": 1,
+        "height": 40,
+        "margin": 10,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders with orders specified 2`] = `
+<View
+  style={
+    Object {
+      "borderColor": "orange",
+      "borderWidth": 1,
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    Chat for order: 
+    1
+  </Text>
+  <RCTScrollView
+    onContentSizeChange={[Function]}
+    showsVerticalScrollIndicator={true}
+    style={
+      Object {
+        "borderColor": "purple",
+        "borderWidth": 1,
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "lightgrey",
+            "flex": 1,
+            "flexDirection": "row",
+            "margin": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+           
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "flex": 1,
+              "textAlign": "right",
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+  <TextInput
+    allowFontScaling={true}
+    onSubmitEditing={[Function]}
+    placeholder="Enter a message..."
+    returnKeyType="send"
+    style={
+      Object {
+        "borderWidth": 1,
+        "height": 40,
+        "margin": 10,
+      }
+    }
+  />
+</View>
+`;

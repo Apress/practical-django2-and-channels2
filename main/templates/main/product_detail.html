@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+  <h1>products</h1>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+      <th>Cover images</th>
+      <td>
+        <div id="imagebox">
+          Loading...
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td>{{ object.price }}</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>{{ object.description|linebreaks }}</td>
+    </tr>
+    <tr>
+      <th>Tags</th>
+      <td>{{ object.tags.all|join:","|default:"No tags available" }}</td>
+    </tr>
+    <tr>
+      <th>In stock</th>
+      <td>{{ object.in_stock|yesno|capfirst }}</td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td>{{ object.date_updated|date:"F Y" }}</td>
+    </tr>
+  </table>
+  <a href="{% url "add_to_basket" %}?product_id={{ object.id }}">Add to basket</a>
+{% endblock content %}
+
+{% block js %}
+  {% render_bundle 'imageswitcher' 'js' %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var images = [
+        {% for image in object.productimage_set.all %}
+          {
+            "image": "{{ image.image.url|safe }}",
+            "thumbnail": "{{ image.thumbnail.url|safe }}"
+          },
+        {% endfor %}
+      ]
+      ReactDOM.render(React.createElement(ImageBox, {
+        images: images,
+        imageStart: images[0]
+      }), document.getElementById('imagebox'));
+    });
+  </script>
+{% endblock %}

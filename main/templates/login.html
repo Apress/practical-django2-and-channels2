@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Login</h2>
+  <p>Please fill the form below.</p>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% include "includes/field.html" with field=form.email %}
+    {% include "includes/field.html" with field=form.password %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock content %}

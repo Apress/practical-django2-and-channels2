@@ -1,0 +1,38 @@
+{% extends "admin/base_site.html" %}
+{% block extrahead %}
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
+    integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ="
+    crossorigin="anonymous"></script>
+{% endblock extrahead %}
+{% block content %}
+  <canvas id="myChart" width="900" height="400"></canvas>
+  <script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: {{ labels|safe }},
+        datasets: [
+          {
+            label: 'No of orders',
+            backgroundColor: 'blue',
+            data: {{ values|safe }}
+          }
+        ]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        }
+      }
+    });
+  </script>
+{% endblock %}

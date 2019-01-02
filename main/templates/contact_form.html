@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Contact us</h2>
+  <p>Please fill the form below to contact us</p>
+  <form method="POST">
+    {% csrf_token %}
+    {% include "includes/field.html" with field=form.name %}
+    {% include "includes/field.html" with field=form.message %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% load widget_tweaks %}
+<div class="form-group">
+  {{ field.label_tag }}
+  {{ field|add_class:"form-control"|add_error_class:"is-invalid" }}
+  {% if field.errors %}
+    <div class="invalid-feedback">
+      {{ field.errors }}
+    </div>
+  {% endif %}
+</div>

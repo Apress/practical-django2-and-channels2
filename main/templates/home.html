@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h2>Home</h2>
+  <p>this will be the content of home</p>
+  <h3>Now with an Android app</h3>
+  <p><a href="{% static "booktime_mobile.apk" %}">Download it here</a></p>
+{% endblock content %}
